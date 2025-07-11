@@ -2503,6 +2503,7 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .contact {
   background-color: color-mix(in srgb, var(--background-color), #f5f8fd 30%);
 }
@@ -3144,4 +3145,216 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+
+/*-------------------------------------------------------------
+# terms of service
+------------------------------------------------------------ */
+
+.terms {
+  background-color: var(--background-color);
+  padding: 60px 20px;
+}
+
+.terms .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--heading-color);
+} */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accordion-item {
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--surface-color, #fff);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.accordion-toggle {
+  background-color: var(--surface-color, #fff);
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background-color: var(--accent-color-light, #f3f6fa);
+}
+
+.accordion-content {
+  padding: 0 24px 18px 24px;
+  font-size: 15px;
+  color: var(--default-color);
+  display: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+
+
+/*--------------------------------
+#pickles
+-----------------------------*/
+
+.section-products {
+  padding: 60px 20px;
+  background-color: var(--background-color, #f8f9fa);
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--heading-color);
+}
+
+.product-card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default: 1 column for mobile */
+  gap: 30px;
+}
+
+/* .product-card {
+  background-color: var(--surface-color, #fff);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.product-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-details h3 a {
+  font-size: 20px;
+  color: var(--heading-color);
+  text-decoration: none;
+}
+
+.product-details p {
+  font-size: 15px;
+  color: var(--default-color);
+  margin: 12px 0 20px;
+}
+
+.btn-explore {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn-explore i {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.btn-explore:hover {
+  color: var(--accent-color-dark);
+}
+
+
+
+@media (min-width: 576px) {
+  .product-card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items on small tablets */
+  }
+}
+
+@media (min-width: 768px) {
+  .product-card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items on tablets */
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-card-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 items on large desktops */
+  }
+}
+
+
+.product-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--surface-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+  
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  transition: height 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+  border-radius: 12px;
+}
+
+
+
+.product-card:hover::before {
+  height: 100%;
+}
+
+.product-details {
+  position: relative;
+  z-index: 2; /* Ensures content appears above gradient */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.price-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--default-color);
 }
