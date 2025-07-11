@@ -2509,19 +2509,27 @@ section,
 
 .contact .container {
   max-width: 1200px;
+  
 }
 
 .contact .contact-main-wrapper {
-  position: relative;
-  display: grid;
+  /* position: relative; */
+  /* display: grid; */
   grid-template-columns: 1fr;
   gap: 30px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* min-height: 100vh; */
+  
 }
+
 
 @media (min-width: 992px) {
   .contact .contact-main-wrapper {
     grid-template-columns: 45% 55%;
-    min-height: 600px;
+    /* min-height: 600px; */
+    margin-bottom: 50px;
   }
 }
 
